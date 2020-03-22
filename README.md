@@ -15,7 +15,7 @@ A vendor defined interface together with the ZorkLibUSB library allow for simple
 * Things are hardcoded in the library and do not depend on the USB configuration.
 * The library is not robust to errors and does not check for them.
 
-# Whats even working right now?
+# What's even working right now?
 
 * The device enumerates as high-speed device and is successfully recognized from the OS.
 * A user-defined interface with 2 endpoints of 512 bytes length are configured.

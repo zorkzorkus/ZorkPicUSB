@@ -1,7 +1,7 @@
 # About
 
 This library consists of a small number of .c and .h files, which enable the USB functionality of PIC microcontroller.  
-It was created for PIC32MZ (high-speed USB) as Microchip only offer their "harmony"-framework, which imposes a set structure.  
+It was created for PIC32MZ (high-speed USB) as Microchip only offer their "harmony"-framework, which imposes a set structure, state-machine and extremely overcomplicates things and is definitely not a joy to use.  
 ZorkPicUSB provides USB functionality via API, Callbacks and Interrupts (future).  
 A vendor defined interface together with the ZorkLibUSB library allow for simple user-defined data transfer.  
 

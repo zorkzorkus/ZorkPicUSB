@@ -20,3 +20,28 @@ A vendor defined interface together with the ZorkLibUSB library allow for simple
 * The device enumerates as high-speed device and is successfully recognized from the OS.
 * A user-defined interface with 2 endpoints of 512 bytes length are configured.
 * These endpoints can be used for data transfer. While they may not be robust to errors, they generally work.
+
+# Example
+
+
+    void main(void) {
+    
+        hardware_init(); // Not part of the lib, initialize your hardware for your needs.
+        USBInit();
+    
+        uint8_t buffer[512];
+    
+        while (1) {
+    
+            USBService();
+    
+            if (USBHasData(0x01)) {
+                uint16_t len = USBReceive(0x01, buffer, sizeof (buffer));
+                // Do something with the data, here we simply loop it back.
+                if (USBCanTransmit(0x01)) {
+                    USBTransmit(0x01, buffer, len);
+                }
+            }
+            
+        }
+    }

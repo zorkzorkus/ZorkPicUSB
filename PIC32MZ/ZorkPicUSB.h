@@ -2,7 +2,7 @@
 #define ZORKPICUSB_H
 
 #include "ZorkPicUSBConfig.h"
-#include <proc/p32mz2048efh064.h>
+#include <xc.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>

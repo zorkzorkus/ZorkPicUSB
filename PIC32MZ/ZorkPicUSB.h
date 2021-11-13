@@ -1,7 +1,7 @@
 #ifndef ZORKPICUSB_H
 #define ZORKPICUSB_H
 
-#include "ZorkPicUSBConfig.h"
+#include <ZorkPicUSBConfig.h>
 #include <xc.h>
 #include <stdbool.h>
 #include <stdio.h>
@@ -14,7 +14,7 @@
 #define MAX_CONTROL_LENGTH 512
 
 void USBInit();
-void USBInitEndpoints();
+extern void (*USBInitEndpoints)();
 void USBService();
 
 void USBTransmit(uint8_t endpoint, uint8_t *data, uint16_t length);

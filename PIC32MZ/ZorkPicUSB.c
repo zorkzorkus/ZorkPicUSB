@@ -13,6 +13,9 @@ uint8_t m_ControlBuffer[MAX_CONTROL_LENGTH];
 uint16_t m_ControlLength;
 uint16_t m_ControlIndex;
 
+static void USBInitEndPoints();
+void (*USBInitEndpoints)() = &USBInitEndPoints;
+
 void USBInit() {
 
     USBOTGbits.BDEV = 0;
@@ -35,7 +38,7 @@ void USBInit() {
 
 }
 
-void USBInitEndpoints() {
+void USBInitEndPoints() {
 
     // TODO: endpoint length is not linked to config 
 
